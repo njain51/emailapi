@@ -2,7 +2,7 @@
 email Springboot Webservice
 
 - This is sample SpringBoot webservice to send email. 
-
+- Import as maven Springboot project in Idea
 - Update sender password in Service
 - Run the Application 
 
@@ -20,3 +20,5 @@ curl --location --request POST 'http://localhost:8080/sendemail' \
 }'
 
 ```
+
+- This would send email to recipent@gmail.com
