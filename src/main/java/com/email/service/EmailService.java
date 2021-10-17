@@ -13,9 +13,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailService {
 
-    public  boolean sendEmail (String subject, String message, String recipent_add, String sender_add) {
+    public  boolean sendEmail (String subject, String message, String to, String sender_add) {
 
         boolean flag = false; // Setting Flag false at start
+
 
         // variable for email host
         String host = "smtp.gmail.com";
@@ -37,7 +38,7 @@ public class EmailService {
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(sender_add, "******");
+                return new PasswordAuthentication(sender_add, "6Friends@!");
             }
         });
 
@@ -52,7 +53,8 @@ public class EmailService {
 
             // to email
             // InternetAddress - this class represents an Internet email Address using the syntax of RFC822
-            m.addRecipient(Message.RecipientType.TO, new InternetAddress(recipent_add));
+            m.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+
 
             // adding subject to message
             m.setSubject(subject);

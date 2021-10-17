@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin
 public class EmailApiApiService {
 
     @Autowired
@@ -23,7 +24,7 @@ public class EmailApiApiService {
     @RequestMapping(value = "/sendemail" , method = RequestMethod.POST)
     public ResponseEntity<?> sendEmail(@RequestBody Email email) {
 
-        boolean result = this.emailService.sendEmail(email.getSubject(), email.getMessage(), email.getRecipent_add(), email.getSender_add());
+        boolean result = this.emailService.sendEmail(email.getSubject(), email.getMessage(), email.getTo(), "nitin.ibm2006@gmail.com");
 
         if(result){
             return ResponseEntity.ok("Email is sent successfully ..");

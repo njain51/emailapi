@@ -4,13 +4,13 @@ public class Email {
 
     private String subject;
     private String message;
-    private String recipent_add;
+    private String to;
     private String sender_add;
 
-    public Email(String subject, String message, String recipent_add, String sender_add) {
+    public Email(String subject, String message, String to, String sender_add) {
         this.subject = subject;
         this.message = message;
-        this.recipent_add = recipent_add;
+        this.to = to;
         this.sender_add = sender_add;
     }
 
@@ -30,12 +30,12 @@ public class Email {
         this.message = message;
     }
 
-    public String getRecipent_add() {
-        return recipent_add;
+    public String getTo() {
+        return to;
     }
 
-    public void setRecipent_add(String recipent_add) {
-        this.recipent_add = recipent_add;
+    public void setTo(String to) {
+        this.to = to;
     }
 
     public String getSender_add() {
@@ -51,7 +51,7 @@ public class Email {
         return "Email{" +
                 "subject='" + subject + '\'' +
                 ", message='" + message + '\'' +
-                ", recipent_add='" + recipent_add + '\'' +
+                ", to ='" + to + '\'' +
                 ", sender_add='" + sender_add + '\'' +
                 '}';
     }
