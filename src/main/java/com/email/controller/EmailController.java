@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
-public class EmailApiApiService {
+public class EmailController {
 
     @Autowired
     private EmailService emailService;
